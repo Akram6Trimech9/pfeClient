@@ -1,0 +1,49 @@
+<div class="middle">
+    <div class="sign-column-face s2">
+      <div class="s3">
+        <div class="sign-header-section">
+          <div class="sign-in-title"></div>
+        </div>
+        <div class="sign-buttons" routerLink="/">
+          <img width="160" height="90" src="../../assets/logo.jpg" alt="google-logo" />
+        </div>
+        <form class="input-container" [formGroup]="signupForm" >
+          <div class="row">
+            <input class="col" type="text" required placeholder="Name" formControlName="name">
+            <div class="space"></div>
+            <input class="col" type="text" required placeholder="Last Name" formControlName="lastName">
+          </div>
+          <div class="row">
+            <input class="col" type="text" required placeholder="Address" formControlName="address">
+            <div class="space"></div>
+            <input class="col" type="text" required placeholder="Mobile" formControlName="mobile">
+          </div>
+          <div class="row">
+            <input class="col" type="email" required placeholder="Email" formControlName="email">
+            <div class="space"></div>
+            <input class="col" type="password" required placeholder="Password" formControlName="password">
+          </div>
+          <div class="row">
+            <label for="gender">Gender:</label>
+            <select class="form-control" id="gender" name="gender" required formControlName="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="birthdate">Birth Date:</label>
+            <input id="birthdate" type="date" required placeholder="Birthdate" formControlName="birthdate">
+          </div>
+          <button type="submit" (click)="onSubmit()">
+            Sign Up
+          </button>
+          <div href="#" class="alt-f-full">
+            Already have an account?
+            <a routerLink="/login" class="alt-f">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

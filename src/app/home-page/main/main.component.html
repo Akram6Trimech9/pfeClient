@@ -1,0 +1,156 @@
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center">
+    <div class="logo me-auto">
+      <h1><a routerLink="/">
+        <img src="assets/logo.jpg" />
+      </a></h1>
+    </div>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto "   routerLink="/">Acceuil</a></li>
+        <li>
+          <a class="nav-link scrollto" routerLinkActive="active" href="#about" >Qui sommes nous ?</a>
+        </li>
+        <li class="dropdown nav-link scrollto">
+          <a href="#services"
+            ><span>Services</span> <i class="bi bi-chevron-down"></i
+          ></a>
+          <ul>
+            <li class="dropdown">
+              <a  routerLink="/service"
+                ><span>Comptabilité et Finance</span>
+              </a>
+            </li>
+            <li><a  routerLink="/service">Services Fiscaux</a></li>
+            <li><a  routerLink="/service">Services Juridiques</a></li>
+            <li><a  routerLink="/service">Services Administratifs</a></li>
+                        <li><a   routerLink="/service">Services Administratifs</a></li>
+
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a routerLink="/"
+            ><span>Investir En Tunisie</span> <i class="bi bi-chevron-down"></i
+          ></a>
+          <ul>
+            <li class="dropdown">
+              <a routerLink="/doingBus" routerLinkActive="active"
+                ><span>Doing business</span> <i class="bi bi-chevron-right"></i
+              ></a>
+              <ul>
+                <li><a (click)="navigateWithQuery('doingBus', '1')" >La Tunisie en Bref</a></li>
+                <li><a (click)="navigateWithQuery('doingBus', '2')" >Cadre de vie</a></li>
+                <li>
+                  <a (click)="navigateWithQuery('doingBus', '3')" >Environnement des affaires</a>
+                </li>
+                <li>
+                  <a (click)="navigateWithQuery('doingBus', '4')" >Investissement étranger</a>
+                </li>
+                <li><a (click)="navigateWithQuery('doingBus', '5')" >Cadre règlementaire</a></li>
+                <li><a (click)="navigateWithQuery('doingBus', '6')" >Emploi d'étrangers</a></li>
+                <li><a (click)="navigateWithQuery('doingBus', '7')" >Cadre social</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a routerLink="/documentation" routerLinkActive="active"
+                ><span>Documentation</span> <i class="bi bi-chevron-right"></i
+              ></a>
+              <ul>
+                <li><a  routerLink="/documentation">Economique</a></li>
+                <li><a  routerLink="/documentation">Juridique</a></li>
+                <li><a  routerLink="/documentation">Fiscale</a></li>
+                <li>
+                  <a  routerLink="/documentation">Social et Droit du travail</a>
+                </li>
+              </ul>
+            </li>
+            <li><a routerLink="/liens">Liens utiles </a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link scrollto" routerLink="/actualite">Actualités</a>
+        </li>
+        <li><a class="nav-link"  routerLink="/contacteznous"  >Contact</a></li>
+        <li class="dropdown" *ngIf="currentUser; else signInSignUp">
+          <a href=""><span>{{ currentUser.firstName }} {{ currentUser.lastName }}</span> <i style="font-size: 18px;" class="bi bi-person-circle"></i></a>
+          <ul>
+            <!-- Show user name and last name -->
+             <!-- Dropdown menu options -->
+            <li><a routerLink="/profile">My Profile</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+          </ul>
+        </li>
+        <ng-template #signInSignUp>
+          <li class="dropdown">
+            <a href=""><span>Account</span> <i style="font-size: 18px;" class="bi bi-person-circle"></i></a>
+            <ul>
+              <li><a routerLink="/login">Sign In</a></li>
+              <li><a routerLink="/signup">Sign Up</a></li>
+            </ul>
+          </li>
+        </ng-template>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+  </div>
+</header>
+<router-outlet />
+<div id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>SIA ACCOUNTING & CONSULTING</h3>
+            <p>
+              Bienvenue dans l’entreprise leader fournissant des services alliant qualité, fiabilité et conformité !
+            </p>
+            <div class="social-links mt-3">
+              
+              <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
+              
+              <a href="" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Liens utiles</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Acceuil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">Qui Sommes Nous ?</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
+              
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a  >Comptabilité & Finance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Services Fiscaux</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a  >Services Juridiques</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a  >Services administratifs</a></li>
+              
+            </ul>
+          </div>
+
+         <div class="col-lg-3 col-md-6 footer-info">
+            
+            <p>
+              Rue salem bchir, immeuble jaafoura 5000 monastir <br><br>
+              <strong>Tél:</strong> +216 73 461 199<br>
+              <strong>Email:</strong>{{email}}<br>
+            </p>
+            
+      </div>
+    </div>
+
+    
+       
+</div>
+<div *ngIf="(loader.isLoading$ | async)" class="spinner-overlay ">
+         <div class="loader">
+            <img  src="assets/logo.jpg" />
+         </div>
+</div>

@@ -1,0 +1,47 @@
+.container {
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+     border-radius: 8px;
+  }
+  
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  }
+
+  .customButton{ 
+     background-color: #3fbbc0;
+     color: white;
+     margin-top: 20px;
+  }

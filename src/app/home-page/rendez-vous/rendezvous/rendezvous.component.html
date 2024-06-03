@@ -1,0 +1,125 @@
+<div class="container" *ngIf="!isSended">
+  <h1 class="text-center mb-4" style="color: #3fbbc0;">Prendre un Rendez-vous</h1>
+  <p class="lead">Nous comprenons l'importance d'une gestion financière efficace pour assurer le succès de votre entreprise. Nos experts en comptabilité sont là pour vous offrir des conseils personnalisés et des solutions adaptées à vos besoins.</p>
+
+  <form [formGroup]="rendezvousForm" (ngSubmit)="onSubmit()" class="mt-5">
+    <div class="form-group mt-3">
+      <label for="name" style="color: #3fbbc0;">Nom</label>
+      <input type="text" id="name" class="form-control" formControlName="name" required>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="email" style="color: #3fbbc0;">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email" required>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="date" style="color: #3fbbc0;">Date du Rendez-vous</label>
+      <input type="date" id="date" class="form-control" formControlName="date" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="text" style="color: #3fbbc0;">Activity</label>
+      <input type="text" id="text" class="form-control" formControlName="activity" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="location" style="color: #3fbbc0;">Location</label>
+      <input type="text" id="location" class="form-control" formControlName="location" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="City" style="color: #3fbbc0;">City</label>
+      <input type="text" id="City" class="form-control" formControlName="city" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="company" style="color: #3fbbc0;">company</label>
+      <input type="text" id="company" class="form-control" formControlName="company" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="position" style="color: #3fbbc0;">phone</label>
+      <input type="text" id="phone" class="form-control" formControlName="phone" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="position" style="color: #3fbbc0;">country</label>
+      <input type="text" id="country" class="form-control" formControlName="country" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="position" style="color: #3fbbc0;">position</label>
+      <input type="text" id="position" class="form-control" formControlName="position" required>
+    </div>
+    <div class="form-group mt-3">
+      <label for="message" style="color: #3fbbc0;">Message</label>
+      <textarea id="message" class="form-control" formControlName="message" rows="5"></textarea>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="startDate" style="color: #3fbbc0;">Date de démarrage</label>
+      <!-- formControlName="startDate"  -->
+      <input type="date" id="date" class="form-control" formControlName="startDate" required>
+
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="legalForm" style="color: #3fbbc0;">Forme juridique</label>
+      <select id="legalForm" class="form-control" formControlName="legalForm" required>
+        <option value="">Sélectionnez une forme juridique</option>
+        <option value=" non encore crées">Form juridique non encore créée</option>
+        <option value="sa">SA</option>
+        <option value="sarl">SARL</option>
+        <option value="particulier">Particulier</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="employees" style="color: #3fbbc0;">Effectif</label>
+      <select id="employees" class="form-control" formControlName="employees" required>
+        <option value="">Sélectionnez un effectif</option>
+        <option value="1-5">1 à 5</option>
+        <option value="5-20">5 à 20</option>
+        <option value="20-50">20 à 50</option>
+        <option value="50-70">50 à 70</option>
+        <option value="70-100">70 à 100</option>
+        <option value="100+">100 et plus</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="turnover" style="color: #3fbbc0;">Chiffre d'affaires</label>
+      <select id="turnover" class="form-control" formControlName="turnover" required>
+        <option value="">Sélectionnez un chiffre d'affaires</option>
+        <option value="130000">130 000 DT</option>
+        <option value="300000">300 000 DT</option>
+        <option value="30000">30 000 DT</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="salesInvoices" style="color: #3fbbc0;">Nombre de factures de vente par an</label>
+      <select id="salesInvoices" class="form-control" formControlName="salesInvoices" required>
+        <option value="">Sélectionnez un nombre de factures de vente</option>
+        <option value="1-10">1 à 10</option>
+        <option value="10-50">10 à 50</option>
+        <option value="50-100">50 à 100</option>
+        <option value="100-200">100 à 200</option>
+        <option value="200-1000">200 à 1000</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="purchaseInvoices" style="color: #3fbbc0;">Nombre de factures d'achat par an</label>
+      <select id="purchaseInvoices" class="form-control" formControlName="purchaseInvoices" required>
+        <option value="">Sélectionnez un nombre de factures d'achat</option>
+        <option value="1-10">1 à 10</option>
+        <option value="10-50">10 à 50</option>
+        <option value="50-100">50 à 100</option>
+        <option value="100-200">100 à 200</option>
+        <option value="200-1000">200 à 1000</option>
+      </select>
+    </div>
+
+    <button type="submit" class="customButton btn-block" [disabled]="rendezvousForm.invalid">Envoyer</button>
+  </form>
+</div>
+
+<div *ngIf="isSended" class="container text-center">
+  <h1 class="mt-5" style="color: #3fbbc0;">Merci!</h1>
+  <p class="lead">Nous avons bien reçu votre demande de rendez-vous. Nous vous contacterons bientôt par email.</p>
+</div>

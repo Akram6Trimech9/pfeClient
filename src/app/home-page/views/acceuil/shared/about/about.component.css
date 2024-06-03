@@ -1,0 +1,9 @@
+.flex-custom{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+img{
+    width: 90%;
+     position: absolute;
+ }

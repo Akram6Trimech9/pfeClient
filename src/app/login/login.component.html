@@ -1,0 +1,22 @@
+<div class="middle">
+    <div class="sign-column-face s2">
+        <div class="s3">
+            <div class="sign-header-section">
+                <div class="sign-in-title">
+                </div>
+            </div>
+            <div class="sign-buttons">
+                <img width="160" height="90" src="../../assets/logo.jpg" alt="google-logo" />
+            </div>
+            <form class="input-container">
+                <input type="email" [(ngModel)]="email" name="email" required placeholder="Email">
+                <input type="password" [(ngModel)]="password" name="password" required placeholder="Password">
+                <a href="#" class="alt-f">Forgot Password?</a>
+                <button (click)="signIn()">Sign in</button>
+                <div href="#" class="alt-f-full">
+                    Not a Member yet? <a routerLink="/signup" class="alt-f">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

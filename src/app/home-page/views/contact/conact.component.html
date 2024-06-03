@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8" *ngIf="!messageSent">
+      <!-- Form -->
+      <div class="text-center mb-4">
+        <h1 class="display-4" style="color: #3fbbc0;">Contactez-nous</h1>
+        <p class="lead">Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à nous contacter en utilisant le formulaire ci-dessous :</p>
+      </div>
+      <form [formGroup]="contactForm" (submit)="onSubmit()">
+        <!-- Form fields -->
+        <div class="form-group mt-3">
+          <input type="text" formControlName="name" class="form-control form-control-lg" placeholder="Nom">
+        </div>
+        <div class="form-group mt-3">
+          <input type="email" formControlName="email" class="form-control form-control-lg" placeholder="Email">
+        </div>
+        <div class="form-group mt-3">
+          <textarea formControlName="message" class="form-control form-control-lg" rows="5" placeholder="Message"></textarea>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="mb-4 mt-5 btn btn-primary btn-lg btn-block" style="background-color: #3fbbc0;">Envoyer</button>
+      </form>
+    </div>
+    <!-- "Thank you" message -->
+    <div class="col-lg-8 text-center" *ngIf="messageSent">
+      <h1 class="display-4" style="color: #3fbbc0;">Merci pour votre message !</h1>
+      <p class="lead">Nous reviendrons vers vous très bientôt.</p>
+    </div>
+  </div>
+</div>
