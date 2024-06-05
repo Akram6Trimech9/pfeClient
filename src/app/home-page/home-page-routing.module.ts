@@ -15,6 +15,7 @@ const routes: Routes = [
     { path: 'rendezvous', loadChildren: () => import('./rendez-vous/rendez-vous.module').then(m => m.RendezVousModule) } ,
     { path: 'service', loadChildren: () => import('./views/services-tabs/service.module').then(m => m.ServiceModule) } ,
     { path: 'profile', loadChildren: () => import('./my-profile/my-profile.module').then(m => m.MyProfileModule) } ,
+    { path: 'mesrdv', loadChildren: () => import('./views/mesrdv/mesrdv.module').then(m => m.MesrdvModule) } ,
 
 ]} 
 ];

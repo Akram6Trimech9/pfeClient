@@ -1,47 +1,113 @@
 .blog-post {
-    padding: 2rem;
+    padding: 4rem 3rem;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-bottom: 4rem;
 }
 
-.post-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.post-header {
+    margin-bottom: 3rem;
 }
 
 .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #888;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
+}
+
+.post-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.post-subtitle {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.post-image-container {
+    margin-bottom: 3rem;
 }
 
 .post-image {
     width: 100%;
     height: auto;
-    margin-bottom: 1.5rem;
+    border-radius: 8px;
 }
 
 .post-content p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #888;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-tags .tag {
+    background-color: #f2f2f2;
+    color: #555;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-right: 1rem;
     margin-bottom: 1rem;
 }
 
-footer {
-    background: #333;
+.post-actions .btn {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    margin-left: 1rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
     color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #f2f2f2;
+    color: #555;
+    border: none;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    header .nav-links {
-        flex-direction: column;
-        align-items: center;
+    .blog-post {
+        padding: 3rem 2rem;
     }
 
-    header .nav-links li {
-        margin: 0.5rem 0;
+    .post-title {
+        font-size: 2.4rem;
     }
 
-    main {
-        margin: 1rem;
+    .post-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .post-content p {
+        font-size: 1.4rem;
+    }
+
+    .post-actions .btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
     }
 }

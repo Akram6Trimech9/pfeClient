@@ -69,7 +69,7 @@
           </ul>
         </li>
         <li>
-          <a class="nav-link scrollto" routerLink="/actualite">Actualités</a>
+          <a class="nav-link" (click)="takeMeToActivity()">Actualités</a>
         </li>
         <li><a class="nav-link"  routerLink="/contacteznous"  >Contact</a></li>
         <li class="dropdown" *ngIf="currentUser; else signInSignUp">
@@ -77,9 +77,15 @@
           <ul>
             <!-- Show user name and last name -->
              <!-- Dropdown menu options -->
-            <li><a routerLink="/profile">My Profile</a></li>
+            <li><a routerLink="/profile">mon Profile</a></li>
+            <li><a routerLink="/mesrdv">Mes Rdvs</a></li>
+            <li><a routerLink="/mesrdv">Mes Message</a></li>
+
             <li><a (click)="logout()">Logout</a></li>
           </ul>
+        </li>
+        <li   *ngIf="currentUser" style="display: flex;  align-items: center; justify-content: center; margin-left: 15px; font-size: 20px; margin-top: 5px; color:#25b09b ;"  >
+          <span><i class="fa-solid fa-bell"></i></span>
         </li>
         <ng-template #signInSignUp>
           <li class="dropdown">

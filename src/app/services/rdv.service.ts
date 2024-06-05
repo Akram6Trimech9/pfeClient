@@ -17,4 +17,7 @@ export class RdvService {
   postRdv(payload : any,id:any):Observable<any>{ 
     return this._http.post(`${this.url}${ApiRoutes.rdv}${id}`,payload)
   }
+  getRdvByUser( id : any) :Observable<any>{ 
+    return this._http.get(`${this.url}${ApiRoutes.rdv}user/${id}`)
+  }
 }

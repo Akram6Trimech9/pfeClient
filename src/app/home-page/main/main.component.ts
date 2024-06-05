@@ -38,4 +38,8 @@ export class MainComponent implements OnInit {
     window.location.reload();
 
   }
+  takeMeToActivity(){
+      this.router.navigateByUrl('/actualite')
+ 
+  } 
 }

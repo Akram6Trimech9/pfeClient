@@ -1,0 +1,95 @@
+.rendez-vous-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .rendez-vous-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .rendez-vous-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .rendez-vous-list {
+    width: 100%;
+    max-width: 800px;
+    height: calc(100vh - 100px); /* Adjust based on header and padding */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Add some padding to avoid scrollbar overlap */
+    box-sizing: border-box;
+  }
+  
+  .rendez-vous-item {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  
+  .rendez-vous-date {
+    background-color: #2d9ca0;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rendez-vous-date h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .rendez-vous-details {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .rendez-vous-details h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #333;
+  }
+  
+  .rendez-vous-details p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 0;
+  }
+  
+  .rendez-vous-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .rendez-vous-actions .btn {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    margin-left: 12px;
+  }
+  
+  .rendez-vous-actions .btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .rendez-vous-actions .btn-delete:hover {
+    background-color: #c82333;
+  }

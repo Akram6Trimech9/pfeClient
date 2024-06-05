@@ -6,6 +6,7 @@ import { LoginComponent } from './login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     LoginRoutingModule,
+    SweetAlert2Module,
     HttpClientModule
   ],
   providers:[

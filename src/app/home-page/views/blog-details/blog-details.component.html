@@ -1,10 +1,22 @@
-<article class="blog-post">
-    <h1 class="post-title">The Modern Responsive Blog Post</h1>
-    <p class="post-meta">Published on May 26, 2024 by Jane Doe</p>
-    <img src="https://via.placeholder.com/800x400" alt="Blog post image" class="post-image">
-    <div class="post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-        <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+<article class="blog-post" >
+    <header class="post-header">
+        <div class="post-meta">
+            <span class="post-date">{{actuality.createdAt | date:'mediumDate'}}</span>
+            <span class="post-author">by Admin</span>
+        </div>
+        <h1 class="post-title">{{actuality.title}}</h1>
+        <p class="post-subtitle">{{actuality.subtitle}}</p>
+    </header>
+    <div class="post-image-container">
+        <img [src]="actuality.file" alt="Blog post image" class="post-image">
     </div>
+    <div class="post-content">
+        <p>{{actuality.description}}</p>
+    </div>
+    <footer class="post-footer">
+        <div class="post-tags">
+            <span class="tag" *ngFor="let tag of actuality.tags">{{tag}}</span>
+        </div>
+         
+    </footer>
 </article>

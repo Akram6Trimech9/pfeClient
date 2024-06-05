@@ -1,0 +1,18 @@
+<div class="rendez-vous-container">
+    <div class="rendez-vous-header">
+      <h1>My Rendezvous</h1>
+    </div>
+    <div class="rendez-vous-list">
+      <div class="rendez-vous-item" *ngFor="let item of rdvs">
+        <div class="rendez-vous-date">
+          <h3>{{ item.date | date }}</h3>
+        </div>
+        <div class="rendez-vous-details">
+           <p>{{ item.status }}</p>
+        </div>
+        <div class="rendez-vous-actions">
+          <button class="btn btn-delete"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
