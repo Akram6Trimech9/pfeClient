@@ -173,3 +173,14 @@ section {
       width: 100%;
     }
   }
+  .customColor{
+    background-color: #5c768d;
+    padding: 15px;
+    margin-bottom: 20%;
+    border-radius: 15px;
+  }
+  .container-btn{
+    display:flex ;
+    justify-content: center;
+  }
+

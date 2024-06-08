@@ -20,4 +20,5 @@ export class ActualityService {
   getOneActuality(id:any) : Observable<any>{
      return this._http.get<any>(`${this.url}/actuality/${id}`)
   }
+
 }

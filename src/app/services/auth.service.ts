@@ -6,6 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { ApiRoutes, LocalStorage } from '../ts/enum';
 import { AuthStoreService } from './authStore.service';
 import { CurrentUserService } from './currentUser.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,14 @@ import { CurrentUserService } from './currentUser.service';
 export class AuthService {
    url = "http://localhost:3000/api"
 
-  constructor(private _http: HttpClient , private _authStore: AuthStoreService) { }
+  constructor(private router :Router , private _http: HttpClient , private _authStore: AuthStoreService) { }
 
   helper = new JwtHelperService();
   
+
+  updatePassword(password: string , id:any):Observable<any>{
+       return this._http.patch(`${this.url}/user/password/${id}`,{password:password})
+  }
   IsUserExist(email: string): Observable<boolean> {
     return this._http.get(`${ApiRoutes.UserInfo}/${email}`).pipe(
     map((response: any ) => {
@@ -36,6 +41,15 @@ export class AuthService {
     )
   }
   
+  
+  sendVerification(id : any ) : Observable<any>{
+    return  this._http.post<any>(`${this.url}/user/verification/${id}`, {})
+  }
+  
+
+  resetPassword(token : any , password: any) :Observable<any>{ 
+     return this._http.put<any>(`${this.url}/user/reset-password/${token}`,password)
+  }
 
   login(payload :  any) : Observable<any>{
     return  this._http.post<any>(`${this.url}${ApiRoutes.login}`, payload)
@@ -60,8 +74,7 @@ export class AuthService {
   
   logout(){
     this._authStore.logout()
-
-    // return    this._http.get(`${this.url}${ApiRoutes.logout}`).pipe(
+    // return    this._http.get(`${this.url}this.url${ApiRoutes.logout}`).pipe(
     //    map(()=>{              
     //    })
     // )
@@ -77,6 +90,10 @@ export class AuthService {
       })
     );
   }
+  verifiedAccount(token: any):Observable<any>{ 
+    return this._http.get<any>(`${this.url}/user/verifiedAccount/${token}`)
+ }
+
   // refreshToken(): Observable<tokenInterface> {    
   //   const headers = {
   //     [AUTHORIZATION_HEADER_KEY]: `${AUTHORIZATION_HEADER_PREFIX} ${this._authStore.gRefreshToken}`,
@@ -99,7 +116,7 @@ export class AuthService {
 
 
    sendResetPassword(email : any ){ 
-    return   this._http.post(ApiRoutes.resetPasssend , email)
+    return   this._http.post(`${this.url}${ApiRoutes.resetPasssend}` , email)
    } 
    updateUser(user :any,id:any): Observable<any>{
     return this._http.put<any>(`${this.url}${ApiRoutes.updateUser}/${id}`, user) 

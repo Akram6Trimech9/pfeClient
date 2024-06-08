@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -40,8 +41,14 @@ export class SignupComponent implements OnInit {
        };
   
       this.userService.register(record).subscribe(res=>{
-        if(res){
+        if(res.firstName){
           this.router.navigate(['/login']);
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text:  res.message  
+          });
         }
       })
     } else {

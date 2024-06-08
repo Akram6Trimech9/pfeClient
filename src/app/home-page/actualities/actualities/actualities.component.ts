@@ -7,7 +7,7 @@ import { ActualityService } from '../../../services/actuality.service';
   styleUrl: './actualities.component.css'
 })
 export class ActualitiesComponent implements OnInit {
-  actualities: any[] = [];
+  actualities!: any[]  ;
   isLoading: boolean = true;
 
   constructor(private actualityService: ActualityService) {

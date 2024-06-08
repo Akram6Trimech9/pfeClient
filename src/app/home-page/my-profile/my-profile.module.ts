@@ -14,6 +14,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     CommonModule,
     SweetAlert2Module,
     ReactiveFormsModule,
+    ReactiveFormsModule,
     FormsModule,
     MyProfileRoutingModule
   ]

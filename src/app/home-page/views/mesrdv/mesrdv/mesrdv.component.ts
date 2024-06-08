@@ -10,7 +10,7 @@ import { RdvService } from '../../../../services/rdv.service';
 })
 export class MesrdvComponent implements OnInit {
   current: any;
-  rdvs: any[] = [];
+  rdvs!: any[];
 
   constructor(private currentUser: CurrentUserService, private rdvService: RdvService) { }
 

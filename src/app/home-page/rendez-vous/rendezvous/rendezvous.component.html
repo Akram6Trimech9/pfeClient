@@ -1,69 +1,69 @@
-<div class="container" *ngIf="!isSended">
-  <h1 class="text-center mb-4" style="color: #3fbbc0;">Prendre un Rendez-vous</h1>
+<div class="container"  *ngIf="!isSended">
+  <h1 class="text-center mb-4" style="color: #5c768d;">Prendre un Rendez-vous</h1>
   <p class="lead">Nous comprenons l'importance d'une gestion financière efficace pour assurer le succès de votre entreprise. Nos experts en comptabilité sont là pour vous offrir des conseils personnalisés et des solutions adaptées à vos besoins.</p>
 
-  <form [formGroup]="rendezvousForm" (ngSubmit)="onSubmit()" class="mt-5">
+  <form [formGroup]="rendezvousForm" (ngSubmit)="onSubmit()" class="mt-5 formColor">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="name" style="color: #3fbbc0;">Nom</label>
+        <label for="name" style="color: white;">Nom</label>
         <input type="text" id="name" class="form-control" formControlName="name" required>
       </div>
       <div class="form-group col-md-6">
-        <label for="email" style="color: #3fbbc0;">Email</label>
+        <label for="email" style="color: white;">Email</label>
         <input type="email" id="email" class="form-control" formControlName="email" required>
       </div>
       
       <div class="form-group col-md-6">
-        <label for="date" style="color: #3fbbc0;">Date du Rendez-vous</label>
+        <label for="date" style="color: white;">Date du Rendez-vous</label>
         <input type="date" id="date" class="form-control" formControlName="date" required>
       </div>
       <div class="form-group col-md-6">
-        <label for="activity" style="color: #3fbbc0;">Activity</label>
+        <label for="activity" style="color: white;">Activity</label>
         <input type="text" id="activity" class="form-control" formControlName="activity" required>
       </div>
       
       <div class="form-group col-md-6">
-        <label for="location" style="color: #3fbbc0;">Location</label>
+        <label for="location" style="color: white;">Location</label>
         <input type="text" id="location" class="form-control" formControlName="location" required>
       </div>
       <div class="form-group col-md-6">
-        <label for="City" style="color: #3fbbc0;">City</label>
+        <label for="City" style="color: white;">City</label>
         <input type="text" id="City" class="form-control" formControlName="city" required>
       </div>
       
       <div class="form-group col-md-6">
-        <label for="company" style="color: #3fbbc0;">Company</label>
+        <label for="company" style="color: white;">Company</label>
         <input type="text" id="company" class="form-control" formControlName="company" required>
       </div>
       <div class="form-group col-md-6">
-        <label for="phone" style="color: #3fbbc0;">Phone</label>
+        <label for="phone" style="color: white;">Phone</label>
         <input type="text" id="phone" class="form-control" formControlName="phone" required>
       </div>
       
       <div class="form-group col-md-6">
-        <label for="country" style="color: #3fbbc0;">Country</label>
+        <label for="country" style="color: white;">Country</label>
         <input type="text" id="country" class="form-control" formControlName="country" required>
       </div>
       <div class="form-group col-md-6">
-        <label for="position" style="color: #3fbbc0;">Position</label>
+        <label for="position" style="color: white;">Position</label>
         <input type="text" id="position" class="form-control" formControlName="position" required>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="message" style="color: #3fbbc0;">Message</label>
+      <label for="message" style="color: white;">Message</label>
       <textarea id="message" class="form-control" formControlName="message" rows="5"></textarea>
     </div>
 
     <div class="form-group">
-      <label for="startDate" style="color: #3fbbc0;">Date de démarrage</label>
+      <label for="startDate" style="color: white;">Date de démarrage</label>
       <input type="date" id="startDate" class="form-control" formControlName="startDate" required>
     </div>
 
  
 
 <div class="form-group mt-3">
-  <label for="legalForm" style="color: #3fbbc0;">Forme juridique</label>
+  <label for="legalForm" style="color: white;">Forme juridique</label>
   <select id="legalForm" class="form-control" formControlName="legalForm" required>
     <option value="">Sélectionnez une forme juridique</option>
     <option value=" non encore crées">Form juridique non encore créée</option>
@@ -74,7 +74,7 @@
 </div>
 
 <div class="form-group mt-3">
-  <label for="employees" style="color: #3fbbc0;">Effectif</label>
+  <label for="employees" style="color: white;">Effectif</label>
   <select id="employees" class="form-control" formControlName="employees" required>
     <option value="">Sélectionnez un effectif</option>
     <option value="1-5">1 à 5</option>
@@ -87,7 +87,7 @@
 </div>
 
 <div class="form-group mt-3">
-  <label for="turnover" style="color: #3fbbc0;">Chiffre d'affaires</label>
+  <label for="turnover" style="color: white;">Chiffre d'affaires</label>
   <select id="turnover" class="form-control" formControlName="turnover" required>
     <option value="">Sélectionnez un chiffre d'affaires</option>
     <option value="130000">130 000 DT</option>
@@ -97,7 +97,7 @@
 </div>
 
 <div class="form-group mt-3">
-  <label for="salesInvoices" style="color: #3fbbc0;">Nombre de factures de vente par an</label>
+  <label for="salesInvoices" style="color: white;">Nombre de factures de vente par an</label>
   <select id="salesInvoices" class="form-control" formControlName="salesInvoices" required>
     <option value="">Sélectionnez un nombre de factures de vente</option>
     <option value="1-10">1 à 10</option>
@@ -109,7 +109,7 @@
 </div>
 
 <div class="form-group mt-3">
-  <label for="purchaseInvoices" style="color: #3fbbc0;">Nombre de factures d'achat par an</label>
+  <label for="purchaseInvoices" style="color: white;">Nombre de factures d'achat par an</label>
   <select id="purchaseInvoices" class="form-control" formControlName="purchaseInvoices" required>
     <option value="">Sélectionnez un nombre de factures d'achat</option>
     <option value="1-10">1 à 10</option>
@@ -119,11 +119,13 @@
     <option value="200-1000">200 à 1000</option>
   </select>
 </div>
-    <button type="submit" class="customButton btn-block mb-5 mt-3" >Envoyer</button>
+<div style="width: 100%; display: flex; justify-content: center;">
+    <button type="submit"   style="cursor: pointer; background-color:  white ; color: #5c768d; border: none; border-radius: 15px; padding: 20px; width: 70%; font-weight: bold;" class="custom   mb-5 mt-3" >Envoyer</button>
+  </div>
   </form>
 </div>
 
 <div *ngIf="isSended" class="container text-center">
-  <h1 class="mt-5" style="color: #3fbbc0;">Merci!</h1>
+  <h1 class="mt-5" style="color: 3fbbc0;">Merci!</h1>
   <p class="lead">Nous avons bien reçu votre demande de rendez-vous. Nous vous contacterons bientôt par email.</p>
 </div>

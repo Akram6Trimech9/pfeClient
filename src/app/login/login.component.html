@@ -8,15 +8,19 @@
             <div class="sign-buttons">
                 <img width="160" height="90" src="../../assets/logo.jpg" alt="google-logo" />
             </div>
-            <form class="input-container">
+            <form class="input-container" *ngIf="!verifyAccount">
                 <input type="email" [(ngModel)]="email" name="email" required placeholder="Email">
                 <input type="password" [(ngModel)]="password" name="password" required placeholder="Password">
-                <a href="#" class="alt-f">Forgot Password?</a>
+                <a routerLink="/forgot" class="alt-f">Forgot Password?</a>
                 <button (click)="signIn()">Sign in</button>
                 <div href="#" class="alt-f-full">
                     Not a Member yet? <a routerLink="/signup" class="alt-f">Sign up</a>
                 </div>
             </form>
+            <p *ngIf="verifyAccount">
+                 your account isn't verified please verify your account 
+                  <a style="color: blue; cursor: pointer;" (click)="sendVerificationLink()">Click here To take a verification Link </a>
+            </p>
         </div>
     </div>
 </div>

@@ -1,3 +1,8 @@
+.formColor {
+  background-color: #5c768d;
+  padding: 15px;
+  color: white;
+}
 .form-row {
   display: flex;
   flex-wrap: wrap;
@@ -43,7 +48,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background-color: #3fbbc0;
+  background-color: #5c768d;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -52,4 +57,103 @@
 
 .customButton:hover {
   background-color: #36a2a7;
+}
+
+.container {
+  max-width: 80%;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Ffr.vecteezy.com%2Fphoto%2F12802174-page-de-calendrier-avec-stylo-close-up-background-concept-de-reunion-de-rendez-vous-de-planification-d-entreprise&psig=AOvVaw17wtneiEbTorv_1fsvKMeg&ust=1717932151416000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKDwpY_yy4YDFQAAAAAdAAAAABAE);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.customButton {
+  background-color: #3fbbc0; /* Your accent color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customButton:hover {
+  background-color: #2a99a8; /* Darker shade of your accent color */
+}
+
+.form-group label {
+  color: #3fbbc0; /* Your accent color */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3fbbc0; /* Your accent color */
+  box-shadow: 0 0 5px rgba(59, 187, 192, 0.5);
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 20px;
+}
+
+.mt-5 {
+  margin-top: 30px;
+}
+
+.mt-3 {
+  margin-top: 20px;
+}
+
+.mb-5 {
+  margin-bottom: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+  }
+}
+
+.custom:hover{
+  background-color: white;
+  color: #d6d8da;
+  border: none;
+  border-radius: 15px;
+  padding: 25px !important;
+  width: 72%;
+  font-weight: bold;
 }

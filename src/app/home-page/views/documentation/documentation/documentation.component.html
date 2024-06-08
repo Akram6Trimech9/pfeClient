@@ -8,7 +8,7 @@
       
       
       <div class="section" *ngFor="let category of categories">
-        <h4 class="custom-accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseEconomique" aria-expanded="false" aria-controls="collapseEconomique">+ {{category}}</h4>
+         <h4 class="custom-accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseEconomique" aria-expanded="false" aria-controls="collapseEconomique" style="cursor: pointer;" (click)="changeOpt(category)" ><i *ngIf="!plus && categoryChosen===category" class="fas fa-plus"></i> <i *ngIf="plus&&  categoryChosen===category" class="fas fa-minus"></i>  {{category}}</h4>
         <div id="collapseEconomique" class="accordion-collapse collapse" aria-labelledby="headingEconomique" data-bs-parent="#accordionExample">
             <div class="section-content">
               <div class="row" data-aos="fade-left">
@@ -18,7 +18,7 @@
                     <div class="pdf-link">
                       <i class="bi bi-download"></i>
                       <p style="font-size: 15px; font-weight: bold; margin: 10px 0 3px 0; color: #032c27;    font-size: 13px;font-weight: 700;"> {{document.title}}<br>
-                        <span style="    display: -webkit-box;font-size: 12px;color: #05617a;"> {{document.category}}</span></p>
+                        <span style="  cursor: pointer;  display: -webkit-box;font-size: 12px;color: #05617a;"> {{document.category}}</span></p>
                     </div>
                   </div>
                 </a>

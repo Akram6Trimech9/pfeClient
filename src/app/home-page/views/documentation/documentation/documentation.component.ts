@@ -8,9 +8,10 @@ import { DocumentsService } from '../../../../services/documents.service';
   styleUrl: './documentation.component.css'
 })
 export class DocumentationComponent implements OnInit {
-
+  plus:boolean=false
+  categoryChosen : string= ''
   categories: string[] = ['juridique', 'fiscale', 'economique', 'sociale'];
-  documents : any[] = []
+  documents !: any[]  
   url='http://localhost:3000/'
   constructor( private documentService: DocumentsService){}
   ngOnInit(): void { 
@@ -21,5 +22,9 @@ export class DocumentationComponent implements OnInit {
         item.file = `${this.url}${a}`
        })
    }) 
+  }
+  changeOpt(category:any){ 
+    this.plus=  !this.plus
+    this.categoryChosen=category
   }
 }

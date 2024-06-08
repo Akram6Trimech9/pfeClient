@@ -12,9 +12,10 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+ verifyAccount : Boolean = false ; 
+  idUser!: any
 
   constructor(private router: Router , private authService: AuthService , private currentUser : CurrentUserService) {}
-
   signIn() {
     const payload ={
         email:this.email,
@@ -22,16 +23,22 @@ export class LoginComponent {
     }
      this.authService.login(payload).subscribe(
        (res) => {
-         if(res.token){
-           this.currentUser.setCurrentUser()
-           this.router.navigate(['/'])
-         }else{
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text:  res.message  
-          });
-         }
+        this.idUser= res._id
+        if(res.isBlocked === true){
+          this.verifyAccount = true
+        }else{ 
+          if(res.token){
+            this.currentUser.setCurrentUser()
+            this.router.navigate(['/'])
+          }else{
+           Swal.fire({
+             icon: 'error',
+             title: 'Oops...',
+             text:  res.message  
+           });
+          }
+        }
+         
        },
        (error) => {
          Swal.fire({
@@ -41,5 +48,10 @@ export class LoginComponent {
          });
        }
      );
+  }
+  sendVerificationLink(){ 
+    this.authService.sendVerification(this.idUser).subscribe(res=>{ 
+
+    })
   }
 }

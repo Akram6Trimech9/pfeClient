@@ -3,10 +3,10 @@
     <div class="col-lg-8" *ngIf="!messageSent">
       <!-- Form -->
       <div class="text-center mb-4">
-        <h1 class="display-4" style="color: #3fbbc0;">Contactez-nous</h1>
+        <h1 class="display-4" style="color: #5c768d;">Contactez-nous</h1>
         <p class="lead">Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à nous contacter en utilisant le formulaire ci-dessous :</p>
       </div>
-      <form [formGroup]="contactForm" (submit)="onSubmit()">
+      <form [formGroup]="contactForm" class="customColor" (submit)="onSubmit()">
         <!-- Form fields -->
         <div class="form-group mt-3">
           <input type="text" formControlName="name" class="form-control form-control-lg" placeholder="Nom">
@@ -18,7 +18,9 @@
           <textarea formControlName="message" class="form-control form-control-lg" rows="5" placeholder="Message"></textarea>
         </div>
         <!-- Submit button -->
-        <button type="submit" class="mb-4 mt-5 btn btn-primary btn-lg btn-block" style="background-color: #3fbbc0;">Envoyer</button>
+         <div class="container-btn">
+        <button type="submit" class="mb-4 mt-5 btn btn-primary btn-lg btn-block" style="background-color: white; border: none; color:#5c768d;">Envoyer</button>
+      </div>
       </form>
     </div>
     <!-- "Thank you" message -->

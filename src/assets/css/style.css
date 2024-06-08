@@ -777,16 +777,16 @@ section {
 }
 
 .departments .nav-link:hover h4 {
-  color: #3fbbc0;
+  color: #5c768d;
 }
 
 .departments .nav-link.active {
   background: #f7fcfc;
-  border-color: #3fbbc0;
+  border-color: #5c768d;
 }
 
 .departments .nav-link.active h4 {
-  color: #3fbbc0;
+  color: #5c768d;
 }
 
 .departments .tab-pane.active {
@@ -812,7 +812,7 @@ section {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #3fbbc0;
+  color: #5c768d;
 }
 
 .departments .tab-pane p {

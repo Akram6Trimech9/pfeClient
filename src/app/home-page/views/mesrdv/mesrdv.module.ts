@@ -16,6 +16,9 @@ import { CurrentUserService } from '../../../services/currentUser.service';
   providers:[
     RdvService,
     CurrentUserService
+  ],
+  exports:[
+    MesrdvComponent
   ]
 })
 export class MesrdvModule { }

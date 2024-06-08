@@ -4,6 +4,7 @@ import { LoaderService } from '../../services/loader.service';
 import { Router } from '@angular/router';
 import { CurrentUserService } from '../../services/currentUser.service';
 import { AuthService } from '../../services/auth.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-main',
@@ -13,9 +14,10 @@ import { AuthService } from '../../services/auth.service';
 })
 export class MainComponent implements OnInit { 
   email : string = ' SIA@SAC.COM.TN'
+  notification!:any[]
 
   currentUser: any;
-  constructor(public loader : LoaderService ,private router : Router , private currentUSer : CurrentUserService , private authService :AuthService){ }
+  constructor(public loader : LoaderService ,private router : Router , private currentUSer : CurrentUserService , private authService :AuthService,private notifService : NotificationService){ }
    ngOnInit(): void {
     this.loader.showLoader()
     setTimeout(() => {
@@ -25,6 +27,12 @@ export class MainComponent implements OnInit {
     this.currentUSer.currentUser$.subscribe(user => {
       this.currentUser = user;
     });
+    this.notifService.getNotificationByUserId(this.currentUser._id).subscribe(res =>{ 
+      this.notification =res
+   })
+   this.notifService.getMessages().subscribe(res=>{
+    this.notification.push(res.notification)
+    })
    }
 
    navigateWithQuery(url: string, query: string) {

@@ -12,7 +12,7 @@ export enum ApiRoutes {
     Users = '/users',
     register='/user/signup',
     confirmEmail='/email-confirmation/confirm',
-    resetPasssend='/reset/send',
+    resetPasssend='/user/forgot-password',
     updatePassword='/reset/changepassword',
     loginWithFb='/auth/facebook',
     search='/users/search',
