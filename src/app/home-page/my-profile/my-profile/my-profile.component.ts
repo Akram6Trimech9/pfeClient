@@ -14,29 +14,23 @@ export class MyProfileComponent implements OnInit {
   profileForm!: FormGroup;
   newPassword!: string ; 
   confirmPassword!:string ; 
+  messages :any
+  user : any
+  current: any;
+  rdvs: any ;
   constructor(
     private formBuilder: FormBuilder,
     private currentUser: CurrentUserService,
     private authService : AuthService,
     private rdvService: RdvService
   ) {}
- user : any
+
   ngOnInit(): void {
-    this.profileForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      mobile: ['', Validators.required],
-      gender: ['', Validators.required],
-      address: ['', Validators.required],
-      birthdate: ['', Validators.required]
-    });
-    this.currentUser.currentUser$.subscribe(res => {
-      this.current = res;
-      this.loadRendezvous();
-    });
-     this.currentUser.currentUser$.subscribe(res => {
-      this.user = res
+    this.currentUser.currentUser$.subscribe(async res => {
+      this.current = await res;
+      await this.loadRendezvous();
+      await this.loadMessages();
+      this.user = res; // Move this line here
       if (res) {
         this.profileForm.patchValue({
           firstName: res.firstName,
@@ -49,20 +43,32 @@ export class MyProfileComponent implements OnInit {
         });
       }
     });
+  
+    this.profileForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: [{value: '', disabled: true}, [Validators.required, Validators.email]],
+      mobile: ['', Validators.required],
+      gender: ['', Validators.required],
+      address: ['', Validators.required],
+      birthdate: ['', Validators.required]
+    });
   }
-  current: any;
-  rdvs!: any[] ;
+  
 
  
  
 
   loadRendezvous(): void {
-    if (this.current && this.current._id) {
-      this.rdvService.getRdvByUser(this.current._id).subscribe(res => {
+       this.rdvService.getRdvByUser(this.current._id).subscribe(res => {
         this.rdvs = res;
       });
-    }
-  }
+   }
+   loadMessages(): void{
+      this.rdvService.getMessageByEmail(this.current.email).subscribe(res=>{ 
+           this.messages = res
+      })
+   }
   updateUserProfile(): void {
     if (this.profileForm.valid) {
       this.authService.updateUser(this.profileForm.value, this.user._id).subscribe(
@@ -85,21 +91,6 @@ export class MyProfileComponent implements OnInit {
       this.profileForm.markAllAsTouched();
     }
   }
-    messages :any[] = [
-    {
-      'date': '2024-06-08 10:30:00',
-      'content': 'Hello! How are you today?'
-    },
-    {
-      date: '2024-06-08 11:45:00',
-      content: 'I m doing well, thank you! How about you?'
-    },
-    {
-      date: '2024-06-08 12:15:00',
-      content: 'I m good too. Just working on some coding projects.'
-    }
-  ];
-
   updatePassword(){ 
       this.authService.updatePassword(this.newPassword,this.user._id).subscribe(res=>{
         Swal.fire({
@@ -108,6 +99,16 @@ export class MyProfileComponent implements OnInit {
           icon: "success"
         });
       })
+  }
+  deleteRdv(id: any){ 
+    this.rdvService.deleteRdvById(id).subscribe(res => {
+      if(res){
+        this.rdvs = this.rdvs.filter((item: any) => item._id !== id);
+      }
+    });
+  }
+  getRdv(){
+     this.loadRendezvous()
   }
   
 }

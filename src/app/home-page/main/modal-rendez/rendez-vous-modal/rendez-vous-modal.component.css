@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.idbutton{ 
+  color: white;
+   background-color:cornflowerblue ;
+   border: none;
+   padding: 13px;
+}

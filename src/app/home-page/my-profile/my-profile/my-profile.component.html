@@ -1,119 +1,261 @@
 <div class="container">
   <ul class="nav pills nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link   active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Mon Profile</button>
+      <button
+        class="nav-link active"
+        id="pills-home-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-home"
+        type="button"
+        role="tab"
+        aria-controls="pills-home"
+        aria-selected="true"
+      >
+        Mon Profile
+      </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Mes rendez vous </button>
+      <button
+        class="nav-link"
+        id="pills-profile-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-rdv"
+        type="button"
+        role="tab"
+        aria-controls="pills-profile"
+        aria-selected="false" 
+        (click)="getRdv()"
+      >
+        Mes rendez vous
+      </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-password" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"> modifier le mot de passe  </button>
+      <button
+        class="nav-link"
+        id="pills-profile-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-password"
+        type="button"
+        role="tab"
+        aria-controls="pills-profile"
+        aria-selected="false"
+      >
+        modifier le mot de passe
+      </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mes messages</button>
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+      >
+        Mes messages
+      </button>
     </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-   <form [formGroup]="profileForm" (ngSubmit)="updateUserProfile()">
-    <div class="profile-info">
-      <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" formControlName="firstName" placeholder="Enter first name">
-        <div *ngIf="profileForm.get('firstName')?.errors?.['required'] && profileForm.get('firstName')?.touched" class="error">First name is required</div>
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" formControlName="lastName" placeholder="Enter last name">
-        <div *ngIf="profileForm.get('lastName')?.errors?.['required'] && profileForm.get('lastName')?.touched" class="error">Last name is required</div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" [disabled]="true" id="email" formControlName="email" placeholder="Enter email">
-        <div *ngIf="profileForm.get('email')?.errors?.['required'] && profileForm.get('email')?.touched" class="error">Email is required</div>
-        <div *ngIf="profileForm.get('email')?.errors?.['email'] && profileForm.get('email')?.touched" class="error">Invalid email format</div>
-      </div>
-      <div class="form-group">
-        <label for="mobile">Mobile:</label>
-        <input type="text" id="mobile" formControlName="mobile" placeholder="Enter mobile number">
-        <div *ngIf="profileForm.get('mobile')?.errors?.['required'] && profileForm.get('mobile')?.touched" class="error">Mobile number is required</div>
-      </div>
-      <div class="form-group">
-        <label for="gender">Gender:</label>
-        <select id="gender" formControlName="gender">
-          <option value="">Select gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-        <div *ngIf="profileForm.get('gender')?.errors?.['required'] && profileForm.get('gender')?.touched" class="error">Gender is required</div>
-      </div>
-      <div class="form-group">
-        <label for="address">Address:</label>
-        <textarea id="address" formControlName="address" placeholder="Enter address"></textarea>
-        <div *ngIf="profileForm.get('address')?.errors?.['required'] && profileForm.get('address')?.touched" class="error">Address is required</div>
-      </div>
-      <div class="form-group">
-        <label for="birthdate">Birthdate:</label>
-        <input type="date" id="birthdate" formControlName="birthdate">
-        <div *ngIf="profileForm.get('birthdate')?.errors?.['required'] && profileForm.get('birthdate')?.touched" class="error">Birthdate is required</div>
-      </div>
+    <div
+      class="tab-pane fade show active"
+      id="pills-home"
+      role="tabpanel"
+      aria-labelledby="pills-home-tab"
+    >
+      <form [formGroup]="profileForm" (ngSubmit)="updateUserProfile()">
+        <div class="profile-info">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input
+              type="text"
+              id="firstName"
+              formControlName="firstName"
+              placeholder="Enter first name"
+            />
+            <div
+              *ngIf="profileForm.get('firstName')?.errors?.['required'] && profileForm.get('firstName')?.touched"
+              class="error"
+            >
+              First name is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input
+              type="text"
+              id="lastName"
+              formControlName="lastName"
+              placeholder="Enter last name"
+            />
+            <div
+              *ngIf="profileForm.get('lastName')?.errors?.['required'] && profileForm.get('lastName')?.touched"
+              class="error"
+            >
+              Last name is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+               id="email"
+              formControlName="email"
+              placeholder="Enter email"
+            />
+            <div
+              *ngIf="profileForm.get('email')?.errors?.['required'] && profileForm.get('email')?.touched"
+              class="error"
+            >
+              Email is required
+            </div>
+            <div
+              *ngIf="profileForm.get('email')?.errors?.['email'] && profileForm.get('email')?.touched"
+              class="error"
+            >
+              Invalid email format
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <input
+              type="text"
+              id="mobile"
+              formControlName="mobile"
+              placeholder="Enter mobile number"
+            />
+            <div
+              *ngIf="profileForm.get('mobile')?.errors?.['required'] && profileForm.get('mobile')?.touched"
+              class="error"
+            >
+              Mobile number is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" formControlName="gender">
+              <option value="">Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <div
+              *ngIf="profileForm.get('gender')?.errors?.['required'] && profileForm.get('gender')?.touched"
+              class="error"
+            >
+              Gender is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea
+              id="address"
+              formControlName="address"
+              placeholder="Enter address"
+            ></textarea>
+            <div
+              *ngIf="profileForm.get('address')?.errors?.['required'] && profileForm.get('address')?.touched"
+              class="error"
+            >
+              Address is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="birthdate" formControlName="birthdate" />
+            <div
+              *ngIf="profileForm.get('birthdate')?.errors?.['required'] && profileForm.get('birthdate')?.touched"
+              class="error"
+            >
+              Birthdate is required
+            </div>
+          </div>
+        </div>
+        <button class="btn-save" type="submit">Save</button>
+      </form>
     </div>
-    <button class="btn-save" type="submit">Save</button>
-  </form>
-    </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div
+      class="tab-pane fade"
+      id="pills-rdv"
+      role="tabpanel"
+      aria-labelledby="pills-profile-tab"
+    >
       <div class="rendez-vous-container">
-        <div class="rendez-vous-header">
-         </div>
+        <div class="rendez-vous-header"></div>
         <div class="rendez-vous-list">
           <div class="rendez-vous-item" *ngFor="let item of rdvs">
             <div class="rendez-vous-date">
               <h3>{{ item.date | date }}</h3>
             </div>
             <div class="rendez-vous-details">
-               <p>{{ item.status }}</p>
+              <p>{{ item.status }}</p>
             </div>
             <div class="rendez-vous-actions">
-              <button class="btn btn-delete"><i class="fas fa-trash"></i></button>
+              <button (click)="deleteRdv(item._id)" class="btn btn-delete">
+                <i class="fas fa-trash"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="tab-pane fade" id="pills-password" role="tabpanel" aria-labelledby="pills-contact-tab">
-    <div>
+    <div
+      class="tab-pane fade"
+      id="pills-password"
+      role="tabpanel"
+      aria-labelledby="pills-contact-tab"
+    >
+      <div class="password-card">
+        <label for="oldPassword">
+          neauveau mot de passe
+          <input
+            type="password"
+            id="oldPassword"
+            class="form-control"
+            [(ngModel)]="newPassword"
+            name="newPassword"
+          />
+        </label>
+        <br />
 
-      <label for="oldPassword"> neauveau mot de passe
-       <input type="password" id="oldPassword" class="form-control"     [(ngModel)]="newPassword" name="newPassword" />
-      </label> <br />
-
-      <label for="newPassword"> confirmer mot de passe 
-        <input type="password"  id="newPassword" class="form-control"  [(ngModel)]="confirmPassword" name="confirmPassword"  />
-       </label>
+        <label for="newPassword">
+          confirmer mot de passe
+          <input
+            type="password"
+            id="newPassword"
+            class="form-control"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+          />
+        </label>
+        <button type="button" (click)="updatePassword()" class="btn customButton">
+          Submit
+        </button>
       </div>
- <button type="button" (click)="updatePassword()" class="btn btn-success">
-    Submit
- </button>
-</div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-         <div class="messages-container">
-          <div class="messages-header">
-           </div>
-          <div class="messages-list">
-            <div class="message-item" *ngFor="let message of messages">
-              <div class="message-date">
-                <p>{{ message.date | date }}</p>
-              </div>
-              <div class="message-content">
-                <p>{{ message.content }}</p>
-              </div>
+  
+    </div>
+    <div
+      class="tab-pane fade"
+      id="pills-contact"
+      role="tabpanel"
+      aria-labelledby="pills-contact-tab"
+    >
+      <div class="messages-container">
+        <div class="messages-header"></div>
+        <div class="messages-list">
+          <div class="message-item" *ngFor="let message of messages">
+            <div class="message-date">
+              <p>{{ message.createdAt | date }}</p>
+            </div>
+            <div class="message-content">
+              <p>{{ message.message }}</p>
             </div>
           </div>
-       </div>
-      
+        </div>
+      </div>
     </div>
   </div>
-  
 </div>

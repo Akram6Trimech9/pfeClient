@@ -18,6 +18,16 @@ export class RdvService {
     return this._http.post(`${this.url}${ApiRoutes.rdv}${id}`,payload)
   }
   getRdvByUser( id : any) :Observable<any>{ 
-    return this._http.get(`${this.url}${ApiRoutes.rdv}user/${id}`)
+    return this._http.get<any>(`${this.url}${ApiRoutes.rdv}user/${id}`)
+  }
+  getRdvById( id : any) :Observable<any>{ 
+    return this._http.get<any>(`${this.url}${ApiRoutes.rdv}${id}`)
+  }
+  getMessageByEmail(email : string) : Observable<any>{
+     return  this._http.get<any>(`${this.url}/message/email/${email}`)
+  }
+
+  deleteRdvById(id : any) : Observable<any>{ 
+     return  this._http.delete<any>( `${this.url}${ApiRoutes.rdv}${id}`)
   }
 }

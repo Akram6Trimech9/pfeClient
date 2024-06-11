@@ -1,10 +1,4 @@
-body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f2f5;
-}
-
+ 
 .container {
   max-width: 50%;
   margin: 50px auto;
@@ -204,3 +198,21 @@ h1 {
   margin: 0;
   color: #333;
 }
+
+
+.password-card{ 
+   border: 1px solid #238d90;
+   padding: 24px ;
+   display: flex;
+   justify-content: center;
+   gap:7px ; 
+  align-items: center;
+  
+}
+.customButton{ 
+   color: white;
+   border: none;
+   border-radius: 7px;
+   background-color: #238d90;
+ align-self: flex-end;
+  }

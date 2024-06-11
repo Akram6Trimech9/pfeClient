@@ -22,6 +22,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.messageSent = true;
     if (this.contactForm.valid) {
       this.contactService.postContact(this.contactForm.value).subscribe(res=>{
             if(res){

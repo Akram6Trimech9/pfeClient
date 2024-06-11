@@ -4,6 +4,7 @@ import { MyProfileRoutingModule } from './my-profile-routing.module';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     ReactiveFormsModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     MyProfileRoutingModule
   ]
 })

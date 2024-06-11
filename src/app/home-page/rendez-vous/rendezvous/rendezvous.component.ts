@@ -42,11 +42,10 @@ export class RendezvousComponent implements OnInit {
   }
 
   onSubmit(): void {
-       console.log(this.rendezvousForm.value);
-      this.rdvService.postRdv(this.rendezvousForm.value, this.user._id).subscribe(res => {
-        if (res) {
-          this.isSended = true;
-        }
-      });
+    this.isSended = true;
+
+       this.rdvService.postRdv(this.rendezvousForm.value, this.user._id).subscribe(res => {
+           this.isSended = true;
+       });
    }
 }

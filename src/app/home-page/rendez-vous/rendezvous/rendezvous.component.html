@@ -2,7 +2,7 @@
   <h1 class="text-center mb-4" style="color: #5c768d;">Prendre un Rendez-vous</h1>
   <p class="lead">Nous comprenons l'importance d'une gestion financière efficace pour assurer le succès de votre entreprise. Nos experts en comptabilité sont là pour vous offrir des conseils personnalisés et des solutions adaptées à vos besoins.</p>
 
-  <form [formGroup]="rendezvousForm" (ngSubmit)="onSubmit()" class="mt-5 formColor">
+  <form [formGroup]="rendezvousForm"  class="mt-5 formColor">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="name" style="color: white;">Nom</label>
@@ -120,7 +120,7 @@
   </select>
 </div>
 <div style="width: 100%; display: flex; justify-content: center;">
-    <button type="submit"   style="cursor: pointer; background-color:  white ; color: #5c768d; border: none; border-radius: 15px; padding: 20px; width: 70%; font-weight: bold;" class="custom   mb-5 mt-3" >Envoyer</button>
+    <button type="submit"  (click)="onSubmit()"  style="cursor: pointer; background-color:  white ; color: #5c768d; border: none; border-radius: 15px; padding: 20px; width: 70%; font-weight: bold;" class="custom   mb-5 mt-3" >Envoyer</button>
   </div>
   </form>
 </div>

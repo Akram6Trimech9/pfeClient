@@ -8,7 +8,7 @@ import {MesmessagesComponent} from '../mesmessages/mesmessages/mesmessages.compo
   declarations: [MesmessagesComponent],
   imports: [
     CommonModule,
-    MesmessagesRoutingModule
+    MesmessagesRoutingModule,
   ]
 })
 export class MesmessagesModule { }

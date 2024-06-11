@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { CurrentUserService } from '../../services/currentUser.service';
 import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../services/notification.service';
+import { MatDialog } from '@angular/material/dialog';
+import { RendezVousModalComponent } from './modal-rendez/rendez-vous-modal/rendez-vous-modal.component';
 
 @Component({
   selector: 'app-main',
@@ -15,9 +17,9 @@ import { NotificationService } from '../../services/notification.service';
 export class MainComponent implements OnInit { 
   email : string = ' SIA@SAC.COM.TN'
   notification!:any[]
-
+ 
   currentUser: any;
-  constructor(public loader : LoaderService ,private router : Router , private currentUSer : CurrentUserService , private authService :AuthService,private notifService : NotificationService){ }
+  constructor(public dialog: MatDialog,public loader : LoaderService ,private router : Router , private currentUSer : CurrentUserService , private authService :AuthService,private notifService : NotificationService){ }
    ngOnInit(): void {
     this.loader.showLoader()
     setTimeout(() => {
@@ -50,4 +52,9 @@ export class MainComponent implements OnInit {
       this.router.navigateByUrl('/actualite')
  
   } 
+  openDialog(item : any){ 
+     this.dialog.open(RendezVousModalComponent,{
+        data:item
+     })
+  }
 }
